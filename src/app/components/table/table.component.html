@@ -1,0 +1,53 @@
+<div class="mb-3 mt-3 w-100 d-flex align-items-center justify-content-center  ">
+    <div class="  text-center w-50  border ">
+        <label for="search" class="fs-3 fw-bold">SEARCH BY ID</label>
+        <input [(ngModel)]="username" (keyup.enter)="getUserInfo()" (keyup.backSpace)="clearSearchInput()" type="text"
+            class="form-control form-control-sm text-center " name="search" id="" aria-describedby="helpId"
+            placeholder="search by customer ID" />
+    </div>
+</div>
+@for (item of user; track user.name) {
+<div class=" h-80 w-75 m-auto border border-dark border-2 mb-3 shadow-lg d-flex justify-content-center align-items-center">
+    <div>
+        <div>
+            <span class="card-title fw-bold ">ID: <span class="badge text-bg-dark ">{{item.id}}</span></span>
+        </div>
+        <div>
+            <span class="card-title fw-bold">Customer Name: <span
+                    class="badge text-bg-dark ">{{item.customer_name}}</span></span>
+        </div>
+        <div>
+            <span class="card-title fw-bold">Amount: <span class="badge text-bg-dark ">{{item.amount}}</span></span>
+        </div>
+        <div>
+            <span class="card-title fw-bold">Transaction Date: <span
+                    class="badge text-bg-dark">{{item.date}}</span></span>
+        </div>
+    </div>
+    <div class="chart w-50">
+        <app-charts></app-charts>
+    </div>
+</div>
+}
+<div>
+    <table class="table table-dark table-hover table-striped  table-bordered text-center border border-5  shadow">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Total Transaction Amount</th>
+                <th>Transactions per day</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of customers; track customers){
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.customer_name}}</td>
+                <td>{{item.amount}}</td>
+                <td> <button class="btn btn-light">View</button> </td>
+            </tr>
+            }
+        </tbody>
+    </table>
