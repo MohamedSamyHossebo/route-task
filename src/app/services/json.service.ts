@@ -9,11 +9,11 @@ export class JsonService {
 
 // search by ID
   userSearch(username: string) {
-    return this._httpClient.get('https://mohamedsamyhossebo.github.io/api/db.json/customers' + '/' + username);
+    return this._httpClient.get('https://mohamedsamyhossebo.github.io/api/db.json' + '/' + username);
   }
 // get all data
   getAllTransactions() {
-    return this._httpClient.get('https://mohamedsamyhossebo.github.io/api/db.json/customers');
+    return this._httpClient.get('https://mohamedsamyhossebo.github.io/api/db.json');
   }
 
 
