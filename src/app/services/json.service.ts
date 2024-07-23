@@ -9,11 +9,11 @@ export class JsonService {
 
 // search by ID
   userSearch(username: string) {
-    return this._httpClient.get('http://localhost:3000/customers' + '/' + username);
+    return this._httpClient.get('https://my-json-server.typicode.com/MohamedSamyHossebo/api/customers' + '/' + username);
   }
 // get all data
   getAllTransactions() {
-    return this._httpClient.get('http://localhost:3000/customers');
+    return this._httpClient.get('https://my-json-server.typicode.com/MohamedSamyHossebo/api/customers');
   }
 
 
